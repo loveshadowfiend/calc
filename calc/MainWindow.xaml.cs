@@ -369,6 +369,9 @@ namespace calc {
                 case Key.Multiply:
                     btn_multiply.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
                     return;
+                case Key.Enter:
+                    btn_equals.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    return;
             }
         }
     }
