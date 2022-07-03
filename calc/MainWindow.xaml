@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:calc"
 
         mc:Ignorable="d"
-        Title="calc" Height="430" Width="280"
+        Title="FGL Calc" Height="430" Width="280"
         ResizeMode="NoResize"
-        KeyDown="Window_KeyDown">
+        KeyDown="WindowKeyDown">
     <Window.Resources>
         <!-- btn style -->
         <Style x:Key="FocusVisual">
@@ -88,43 +88,43 @@
         </Grid.RowDefinitions>
 
         <!-- nums -->
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn7"      Grid.Row="4" Grid.Column="0" Click="btn_num_Click"   Content="7" Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn8"      Grid.Row="4" Grid.Column="1" Click="btn_num_Click"   Content="8" Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn9"      Grid.Row="4" Grid.Column="2" Click="btn_num_Click"   Content="9" Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn4"      Grid.Row="5" Grid.Column="0" Click="btn_num_Click"   Content="4" Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn5"      Grid.Row="5" Grid.Column="1" Click="btn_num_Click"   Content="5" Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn6"      Grid.Row="5" Grid.Column="2" Click="btn_num_Click"   Content="6" Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn1"      Grid.Row="6" Grid.Column="0" Click="btn_num_Click"   Content="1" Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn2"      Grid.Row="6" Grid.Column="1" Click="btn_num_Click"   Content="2" Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn3"      Grid.Row="6" Grid.Column="2" Click="btn_num_Click"   Content="3" Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn0"      Grid.Row="7" Grid.Column="0" Click="btn_num_Click"   Content="0" Margin="3" Grid.ColumnSpan="2"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_dot"   Grid.Row="7" Grid.Column="2" Click="btn_dot_Click"   Content="." Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="Btn7"      Grid.Row="4" Grid.Column="0" Click="BtnNumClick"   Content="7" Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="Btn8"      Grid.Row="4" Grid.Column="1" Click="BtnNumClick"   Content="8" Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="Btn9"      Grid.Row="4" Grid.Column="2" Click="BtnNumClick"   Content="9" Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="Btn4"      Grid.Row="5" Grid.Column="0" Click="BtnNumClick"   Content="4" Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="Btn5"      Grid.Row="5" Grid.Column="1" Click="BtnNumClick"   Content="5" Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="Btn6"      Grid.Row="5" Grid.Column="2" Click="BtnNumClick"   Content="6" Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="Btn1"      Grid.Row="6" Grid.Column="0" Click="BtnNumClick"   Content="1" Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="Btn2"      Grid.Row="6" Grid.Column="1" Click="BtnNumClick"   Content="2" Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="Btn3"      Grid.Row="6" Grid.Column="2" Click="BtnNumClick"   Content="3" Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="Btn0"      Grid.Row="7" Grid.Column="0" Click="BtnNumClick"   Content="0" Margin="3" Grid.ColumnSpan="2"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnDot"    Grid.Row="7" Grid.Column="2" Click="BtnDotClick"   Content="." Margin="3"/>
 
         <!-- ops -->
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_plus"     Grid.Row="7" Grid.Column="3" Click="btn_op_Click"       Content="+"   Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_minus"    Grid.Row="6" Grid.Column="3" Click="btn_op_Click"       Content="-"   Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_equals"   Grid.Row="6" Grid.Column="4" Click="btn_equals_Click"   Content="="   Margin="3" Grid.RowSpan="2" IsDefault="True"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_multiply"  Grid.Row="5" Grid.Column="3" Click="btn_op_Click"       Content="⨯"   Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_reciproc" Grid.Row="5" Grid.Column="4" Click="btn_reciproc_Click" Content="1/x" Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_divide"   Grid.Row="4" Grid.Column="3" Click="btn_op_Click"       Content="/"   Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_percent"  Grid.Row="4" Grid.Column="4" Click="btn_percent_Click"  Content="%"   Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_reverse"  Grid.Row="3" Grid.Column="3" Click="btn_reverse_Click"  Content="±"   Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_sqrt"     Grid.Row="3" Grid.Column="4" Click="btn_sqrt_Click"     Content="√"   Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnPlus"     Grid.Row="7" Grid.Column="3" Click="BtnOpClick"       Content="+"   Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnMinus"    Grid.Row="6" Grid.Column="3" Click="BtnOpClick"       Content="-"   Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnEqual"    Grid.Row="6" Grid.Column="4" Click="BtnEqualClick"    Content="="   Margin="3" Grid.RowSpan="2" IsDefault="True"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnMultiply" Grid.Row="5" Grid.Column="3" Click="BtnOpClick"       Content="⨯"   Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnReciproc" Grid.Row="5" Grid.Column="4" Click="BtnReciprocClick" Content="1/x" Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnDivide"   Grid.Row="4" Grid.Column="3" Click="BtnOpClick"       Content="/"   Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnPercent"  Grid.Row="4" Grid.Column="4" Click="BtnPercentClick"  Content="%"   Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnReverse"  Grid.Row="3" Grid.Column="3" Click="BtnReverseClick"  Content="±"   Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnSqrt"     Grid.Row="3" Grid.Column="4" Click="BtnSqrtClick"     Content="√"   Margin="3"/>
 
         <!-- clear -->
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_back" Grid.Row="3" Grid.Column="0" Click="btn_back_Click" Content="←"  Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_ce"   Grid.Row="3" Grid.Column="1" Click="btn_ce_Click"   Content="CE" Margin="3"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_c"    Grid.Row="3" Grid.Column="2" Click="btn_c_Click"    Content="C"  Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnBack"       Grid.Row="3" Grid.Column="0" Click="BtnBackClick"       Content="←"  Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnClearEntry" Grid.Row="3" Grid.Column="1" Click="BtnClearEntryClick" Content="CE" Margin="3"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnClear"      Grid.Row="3" Grid.Column="2" Click="BtnClearClick"      Content="C"  Margin="3"/>
 
         <!-- memory -->
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_MC"      Grid.Row="2" Grid.Column="0" Margin="3" Click="btn_MC_Click"      Content="MC" Background="#f6f6f6"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_MR"      Grid.Row="2" Grid.Column="1" Margin="3" Click="btn_MR_Click"      Content="MR" Background="#f6f6f6"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_MS"      Grid.Row="2" Grid.Column="2" Margin="3" Click="btn_MS_Click"      Content="MS"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_M_plus"  Grid.Row="2" Grid.Column="3" Margin="3" Click="btn_M_plus_Click"  Content="M+" Background="#f6f6f6"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="btn_M_minus" Grid.Row="2" Grid.Column="4" Margin="3" Click="btn_M_minus_Click" Content="M-" Background="#f6f6f6"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnMemoryClear"   Grid.Row="2" Grid.Column="0" Margin="3" Click="BtnMemoryClearClick"   Content="MC" Background="#f6f6f6"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnMemoryRestore" Grid.Row="2" Grid.Column="1" Margin="3" Click="BtnMemoryRestoreClick" Content="MR" Background="#f6f6f6"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnMemoryStore"   Grid.Row="2" Grid.Column="2" Margin="3" Click="BtnMemoryStoreClick"   Content="MS"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnMemoryPlus"    Grid.Row="2" Grid.Column="3" Margin="3" Click="BtnMemoryPlusClick"    Content="M+" Background="#f6f6f6"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" x:Name="BtnMemoryMinus"   Grid.Row="2" Grid.Column="4" Margin="3" Click="BtnMemoryMinusClick"   Content="M-" Background="#f6f6f6"/>
 
         <!-- textboxes -->
-        <TextBox x:Name="history"       Grid.Row="0" Grid.ColumnSpan="5" IsReadOnly="true" TextAlignment="Right" FontSize="16" VerticalAlignment="Center" BorderThickness="0" Margin="5" FontFamily="Helvetica"/>
-        <TextBox x:Name="display"       Grid.Row="1" Grid.ColumnSpan="5" IsReadOnly="true" TextAlignment="Right" FontSize="26" VerticalAlignment="Center" BorderThickness="0" Margin="5" FontFamily="Helvetica" Text="0"/>
+        <TextBox x:Name="History" Grid.Row="0" Grid.ColumnSpan="5" IsReadOnly="true" TextAlignment="Right" FontSize="16" VerticalAlignment="Center" BorderThickness="0" Margin="5" FontFamily="Helvetica"/>
+        <TextBox x:Name="Display" Grid.Row="1" Grid.ColumnSpan="5" IsReadOnly="true" TextAlignment="Right" FontSize="26" VerticalAlignment="Center" BorderThickness="0" Margin="5" FontFamily="Helvetica" Text="0"/>
     </Grid>
 </Window>
