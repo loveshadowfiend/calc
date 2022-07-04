@@ -4,18 +4,10 @@ using System.Windows.Media;
 using System.Windows;
 
 namespace calc {
-    public interface ICalc {
-        private static dynamic num1 = (decimal)0, num2 = (decimal)0, mem = (decimal)0;
-        private static string op = "";
-        private static bool action = false;
-        private static void MemBtnsRecolor(string color, Button BtnMemoryRestore, Button BtnMemoryPlus, Button BtnMemoryMinus, Button BtnMemoryClear) {
-            var converter = new System.Windows.Media.BrushConverter();
-            var brush = (Brush)converter.ConvertFromString(color);
-            BtnMemoryRestore.Background = brush;
-            BtnMemoryPlus.Background = brush;
-            BtnMemoryMinus.Background = brush;
-            BtnMemoryClear.Background = brush;
-        }
+    public class FGL { // Future Gadget Lab
+        public static dynamic num1 = (decimal)0, num2 = (decimal)0, mem = (decimal)0;
+        public static string op = "";
+        public static bool action = false;
         public static dynamic Calc(dynamic num1, dynamic num2, string op) {
             switch (op) {
                 case "+":
@@ -36,6 +28,14 @@ namespace calc {
                     break;
             }
             return num1;
+        }
+        public static void MemBtnsRecolor(string color, Button BtnMemoryRestore, Button BtnMemoryPlus, Button BtnMemoryMinus, Button BtnMemoryClear) {
+            var converter = new System.Windows.Media.BrushConverter();
+            var brush = (Brush)converter.ConvertFromString(color);
+            BtnMemoryRestore.Background = brush;
+            BtnMemoryPlus.Background = brush;
+            BtnMemoryMinus.Background = brush;
+            BtnMemoryClear.Background = brush;
         }
         public static void Num(Button btn, TextBox Display, TextBox History) {
             if (History.Text.Length == 0) {

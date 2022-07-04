@@ -7,59 +7,59 @@ namespace calc {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, ICalc {
+    public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
         }
         private void BtnNumClick(object sender, RoutedEventArgs e) {
             var btn = (Button)sender;
-            ICalc.Num(btn, Display, History);
+            FGL.Num(btn, Display, History);
         }
         private void BtnDotClick(object sender, RoutedEventArgs e) {
-            ICalc.Dot(Display);
+            FGL.Dot(Display);
         }
         private void BtnOpClick(object sender, RoutedEventArgs e) {
             var btn = (Button)sender;
-            ICalc.Operation(btn, Display, History);
+            FGL.Operation(btn, Display, History);
         } 
         private void BtnEqualClick(object sender, RoutedEventArgs e) {
-            ICalc.Equal(Display, History);
+            FGL.Equal(Display, History);
         } 
         private void BtnBackClick(object sender, RoutedEventArgs e) {
-            ICalc.Back(Display);
+            FGL.Back(Display);
         } 
         private void BtnClearEntryClick(object sender, RoutedEventArgs e) {
-            ICalc.ClearEntry(Display);
+            FGL.ClearEntry(Display);
         } 
         private void BtnClearClick(object sender, RoutedEventArgs e) {
-            ICalc.Clear(Display, History);
+            FGL.Clear(Display, History);
         } 
         private void BtnSqrtClick(object sender, RoutedEventArgs e) {
-            ICalc.Sqrt(Display, History);
+            FGL.Sqrt(Display, History);
         } 
         private void BtnReciprocClick(object sender, RoutedEventArgs e) {
-            ICalc.Reciproc(Display);
+            FGL.Reciproc(Display);
         }
         private void BtnPercentClick(object sender, RoutedEventArgs e) {
-            ICalc.Percent(Display, History);
+            FGL.Percent(Display, History);
         }
         private void BtnReverseClick(object sender, RoutedEventArgs e) {
-            ICalc.Reverse(Display, History);
+            FGL.Reverse(Display, History);
         } 
         private void BtnMemoryStoreClick(object sender, RoutedEventArgs e) {
-            ICalc.MemoryStore(Display, BtnMemoryRestore, BtnMemoryPlus, BtnMemoryMinus, BtnMemoryClear);
+            FGL.MemoryStore(Display, BtnMemoryRestore, BtnMemoryPlus, BtnMemoryMinus, BtnMemoryClear);
         }
         private void BtnMemoryRestoreClick(object sender, RoutedEventArgs e) {
-            ICalc.MemoryRestore(Display);
+            FGL.MemoryRestore(Display);
         } 
         private void BtnMemoryClearClick(object sender, RoutedEventArgs e) {
-            ICalc.MemoryClear(BtnMemoryRestore, BtnMemoryPlus, BtnMemoryMinus, BtnMemoryClear);
+            FGL.MemoryClear(BtnMemoryRestore, BtnMemoryPlus, BtnMemoryMinus, BtnMemoryClear);
         }
         private void BtnMemoryPlusClick(object sender, RoutedEventArgs e) {
-            ICalc.MemoryPlus(Display, BtnMemoryRestore, BtnMemoryPlus, BtnMemoryMinus, BtnMemoryClear);
+            FGL.MemoryPlus(Display, BtnMemoryRestore, BtnMemoryPlus, BtnMemoryMinus, BtnMemoryClear);
         } 
         private void BtnMemoryMinusClick(object sender, RoutedEventArgs e) {
-            ICalc.MemoryMinus(Display, BtnMemoryRestore, BtnMemoryPlus, BtnMemoryMinus, BtnMemoryClear);
+            FGL.MemoryMinus(Display, BtnMemoryRestore, BtnMemoryPlus, BtnMemoryMinus, BtnMemoryClear);
         } 
         private void WindowKeyDown(object sender, KeyEventArgs e) {
             bool shift = Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift);
