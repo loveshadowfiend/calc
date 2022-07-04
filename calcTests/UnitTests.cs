@@ -3,7 +3,7 @@ namespace calcTests {
     public class UnitTests {
         [TestMethod]
         public void CheckDivideByZero() {
-            calc.FGL.Calc(1, 0, "/");
+            calc.ICalc.Calc(1, 0, "/");
         }
     }
 }
