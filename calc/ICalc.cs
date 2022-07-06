@@ -131,7 +131,7 @@ namespace calc {
             }
             if (Display.Text.Length > 0) {
                 Display.Text = Display.Text.Remove(Display.Text.Length - 1);
-                if (Display.Text.Length == 0) {
+                if (Display.Text.Length == 0 || Display.Text.StartsWith('-') && Display.Text.Length == 1) {
                     Display.Text = "0";
                 }
                 if (op == "") {
@@ -204,23 +204,21 @@ namespace calc {
             if (op == "") {
                 try {
                     num1 = 1 / decimal.Parse(Display.Text);
-                    Display.Text = num1.ToString("G12");
                     num2 = (decimal)num2;
                 } catch (Exception ex) when (ex is OverflowException || ex is FormatException) {
                     num1 = 1 / double.Parse(Display.Text);
-                    Display.Text = num1.ToString("G12");
                     num2 = (double)num2;
                 }
+                Display.Text = num1.ToString("G12");
             } else {
                 try {
                     num2 = 1 / decimal.Parse(Display.Text);
-                    Display.Text = num2.ToString("G12");
                     num1 = (decimal)num1;
                 } catch (Exception ex) when (ex is OverflowException || ex is FormatException) {
                     num2 = 1 / double.Parse(Display.Text);
-                    Display.Text = num2.ToString("G12");
                     num1 = (double)num1;
                 }
+                Display.Text = num2.ToString("G12");
             }
             action = true;
         }
@@ -234,17 +232,17 @@ namespace calc {
             Display.Text = num2.ToString("G12");
         }
         public static void Reverse(TextBox Display, TextBox History) {
-            if (op == "") {
-                if (num1.GetType() == typeof(decimal)) {
+            if (History.Text.Length == 0) {
+                try {
                     num1 = decimal.Parse(Display.Text) * (-1);
-                } else {
+                } catch (Exception ex) when (ex is OverflowException || ex is FormatException) {
                     num1 = double.Parse(Display.Text) * (-1);
                 }
                 Display.Text = num1.ToString("G12");
             } else {
-                if (num1.GetType() == typeof(decimal)) {
+                try {
                     num2 = decimal.Parse(Display.Text) * (-1);
-                } else {
+                } catch (Exception ex) when (ex is OverflowException || ex is FormatException){
                     num2 = double.Parse(Display.Text) * (-1);
                 }
                 Display.Text = num2.ToString("G12");
@@ -260,7 +258,7 @@ namespace calc {
             if (mem != 0) {
                 MemBtnsRecolor("white", BtnMemoryRestore, BtnMemoryPlus, BtnMemoryMinus, BtnMemoryClear);
             } else {
-                MemBtnsRecolor("f6f6f6", BtnMemoryRestore, BtnMemoryPlus, BtnMemoryMinus, BtnMemoryClear);
+                MemBtnsRecolor("#f6f6f6", BtnMemoryRestore, BtnMemoryPlus, BtnMemoryMinus, BtnMemoryClear);
             }
         }
         public static void MemoryRestore(TextBox Display) {
